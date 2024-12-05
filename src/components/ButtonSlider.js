@@ -6,8 +6,14 @@ const ButtonSlider = () => {
 
     useEffect(() => {
         const fetchGameTypes = async () => {
+            const port = window.location.port;
             try {
-                const res = await axios.get("https://cyber-siege-back-production.up.railway.app/CyberSiege/api/roles/gameTypes");
+                let res;
+                if(port === "3001") {
+                    res = await axios.get("http://localhost:8080/CyberSiege/api/roles/gameTypes");
+                } else if (port === "3000") {
+                    res = await axios.get("https://cyber-siege-back-production.up.railway.app/railway/api/roles/gameTypes");
+                }
 
                 setThemes(res.data);
             } catch (error) {
