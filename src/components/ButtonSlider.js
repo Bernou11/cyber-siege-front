@@ -7,7 +7,7 @@ const ButtonSlider = () => {
     useEffect(() => {
         const fetchGameTypes = async () => {
             try {
-                const res = await axios.get("http://cyber-siege-back-production.up.railway.app/CyberSiege/api/roles/gameTypes");
+                const res = await axios.get("https://cyber-siege-back-production.up.railway.app/CyberSiege/api/roles/gameTypes");
 
                 setThemes(res.data);
             } catch (error) {
