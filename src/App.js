@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import ButtonSlider from "./components/ButtonSlider";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="game-setup-container">
+            {/* Title */}
+            <h1 className="title">Game Setup</h1>
+
+            {/* Input Fields */}
+            <div className="input-fields">
+                {[...Array(6)].map((_, index) => (
+                    <div key={index} className="input-container">
+                        <label className="player-label">Player {index + 1}:</label>
+                        <input
+                            type="text"
+                            placeholder="Select your name..."
+                            className="input-field"
+                        />
+                    </div>
+                ))}
+            </div>
+
+            {/* Slider */}
+            <div className="slider-container">
+                <ButtonSlider/>
+            </div>
+        </div>
+    );
 }
 
 export default App;

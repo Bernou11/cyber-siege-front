@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.game-setup-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Title styling */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input fields container */
+.input-fields {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
+  width: 100%; /* Full width */
+  max-width: 400px; /* Limit width on larger screens */
+  gap: 10px; /* Space between inputs */
+}
+
+/* Container for each input and its label */
+.input-container {
+  display: flex;
+  align-items: center; /* Align label and input vertically */
+  gap: 10px; /* Space between label and input */
+  width: 100%;
+}
+
+/* Player label */
+.player-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  width: 100px; /* Set a fixed width for the label */
+  text-align: left;
+}
+
+/* Individual input field */
+.input-field {
+  width: 100%; /* Full width of the container */
+  padding: 10px; /* Add padding inside the input */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Slider container with horizontal scrolling */
+.button-slider {
+  display: flex;
+  flex-direction: row; /* Arrange buttons horizontally */
+  gap: 10px; /* Space between buttons */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scrollbar-width: thin; /* Make scrollbar smaller */
+  scrollbar-color: #007bff transparent; /* Customize scrollbar color */
+  padding: 10px 0;
+  width: 100%; /* Full width */
+  max-width: 400px; /* Limit slider width */
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Hide scrollbar for WebKit-based browsers */
+.button-slider::-webkit-scrollbar {
+  height: 6px; /* Small scrollbar height */
+}
+
+.button-slider::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* Blue thumb */
+  border-radius: 10px;
+}
+
+.button-slider::-webkit-scrollbar-track {
+  background: transparent; /* Transparent track */
+}
+
+/* Individual slider buttons */
+.slider-button {
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.slider-button:hover {
+  background-color: #0056b3;
 }
