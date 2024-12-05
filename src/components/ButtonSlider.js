@@ -12,7 +12,7 @@ const ButtonSlider = () => {
                 if(port === "3001") {
                     res = await axios.get("http://localhost:8080/CyberSiege/api/roles/gameTypes");
                 } else {
-                    res = await axios.get("https://cyber-siege-back-production.up.railway.app/railway/api/roles/gameTypes");
+                    res = await axios.get("https://cyber-siege-back-production.up.railway.app/CyberSiege/api/roles/gameTypes");
                 }
 
                 setThemes(res.data);
