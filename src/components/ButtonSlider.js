@@ -11,7 +11,7 @@ const ButtonSlider = () => {
                 let res;
                 if(port === "3001") {
                     res = await axios.get("http://localhost:8080/CyberSiege/api/roles/gameTypes");
-                } else if (port === "3000") {
+                } else {
                     res = await axios.get("https://cyber-siege-back-production.up.railway.app/railway/api/roles/gameTypes");
                 }
 
